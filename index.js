@@ -78,6 +78,9 @@ async function checkFor300k() {
 
 client.on("ready", () => {
   console.log("logged into discord");
+  client.user.setPresence({
+    status: "dnd",
+  })
   // check for 300k+ every 30 seconds
   checkFor300k();
   setInterval(checkFor300k, 30000);
