@@ -10,7 +10,7 @@ const userid = process.env.USER_ID;
 async function checkFor300k() {
     const storage = require('./storage.json')
     if (storage.sent == true) return;
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
 
   await page.goto(
