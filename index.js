@@ -56,7 +56,7 @@ async function checkFor300k() {
       },
     });
 
-    const user = await client.users.fetch(userid);
+    const user = await client.channels.cache.find(userid);
     // send the images to the user
     const embed = new Discord.EmbedBuilder()
         .setTitle("Goal hit!")
@@ -79,7 +79,7 @@ async function checkFor300k() {
 client.on("ready", () => {
   console.log("logged into discord");
   client.user.setPresence({
-    status: "dnd",
+    status: "idle",
   })
   // check for 300k+ every 30 seconds
   checkFor300k();
